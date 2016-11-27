@@ -7,13 +7,21 @@
     <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene stats>
+    <a-scene>
       <a-assets>
         <img id="texture" src="supreme.png">
       </a-assets>
       <a-box color="#FFF" width="4" height="10" depth="2"
-         position="-10 2 -5" rotation="0 0 45" scale="2 0.5 3"
-         src="#texture"></a-box>
+         position="-2 2 -10" rotation="0 0 45" scale="2 0.5 3"
+         src="#texture">
+         <a-animation attribute="rotation" begin="click" ease='ease-in-out' direction="alternate" repeat="1" to="0 360 0"></a-animation>
+       </a-box>
+       <a-light type="spot" color="#333" position="-20 0 0" look-at="a-box"></a-light>
+       <a-light type="point" color="#AAA" position="0 5 0"></a-light>
+       <a-sky color="#4CC3D9"></a-sky>
+       <a-camera position="0 1.8 0">
+         <a-cursor color="#2E3A87"></a-cursor>
+       </a-camera>
     </a-scene>
   </body>
 </html>
